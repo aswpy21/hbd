@@ -129,4 +129,18 @@ document.getElementById("open-btn").addEventListener("click", () => {
     
     setTimeout(typeWriter, 600);
     setInterval(createFloatingElement, 350);
+
+    const birthDate = new Date("2003-07-15T00:00:00"); // Put their actual birthdate & year here
+
+function updateAgeCounter() {
+    const now = new Date();
+    const differenceInMs = now - birthDate;
+    
+    // Math conversions
+    const years = (differenceInMs / (1000 * 60 * 60 * 24 * 365.25)).toFixed(8);
+    
+    document.getElementById("age-counter").innerHTML = `You have been awesome for <span class="highlight">${years}</span> years.`;
+}
+// Trigger it to loop every 50 milliseconds
+setInterval(updateAgeCounter, 50);
 });
