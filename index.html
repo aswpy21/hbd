@@ -3,32 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>A Special Surprise Card</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main class="container">
+    <!-- The Surprise Overlay Screen -->
+    <div id="surprise-overlay" class="overlay">
+        <div class="overlay-card">
+            <div class="gift-icon">🎁</div>
+            <h2>You have a new message!</h2>
+            <p>Click below...</p>
+            <button id="open-btn" class="cta-button">Open it..</button>
+        </div>
+    </div>
+
+    <!-- Hidden Background Audio -->
+    <audio id="bg-music" src="music.mp3" loop></audio>
+
+    <!-- High-performance canvas for touch particle trails -->
+    <canvas id="trail-canvas"></canvas>
+    
+    <!-- Environment container for global floating background items -->
+    <div id="animation-env"></div>
+
+    <!-- The Main Content -->
+    <main id="main-content" class="container blurred">
         <!-- Hero Section -->
         <section class="hero-section">
-            <h1 class="fade-in">Happy Birthday, <span class="highlight">Name</span> ✨</h1>
+            <h1 class="fade-in">Happy Birthday, <span class="gradient-text">Name</span></h1>
             <p class="subtitle fade-in-delayed">A little digital corner made just for you.</p>
         </section>
 
         <!-- Memory Card Section -->
-        <section class="card fade-in-delayed">
+        <section class="card slide-up">
             <div class="image-container">
-                <!-- Replace with your friend's picture -->
-                <img src="https://via.placeholder.com/400x500" alt="Favorite Memory" class="profile-img">
+                <img src="20260623_145849.jpg" alt="Favorite Memory" class="profile-img">
             </div>
             <div class="text-container">
                 <h2>To Someone Special,</h2>
-                <!-- The JavaScript will type the letter out right here -->
                 <p id="birthday-letter" class="letter-text"></p>
             </div>
         </section>
         
-        <!-- Interactive Footer / Note -->
         <footer class="footer fade-in-delayed">
             <p>Made with 🤍</p>
         </footer>
